@@ -1,6 +1,8 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const Dotenv = require("dotenv-webpack");
+const _ = require("lodash");
 
 module.exports = {
   entry: "./src/index.js",
@@ -14,6 +16,8 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
+    new Dotenv(),
+    new _(),
     new HtmlWebpackPlugin({
       title: "NAME GOES HERE",
       template: "./src/index.html",
